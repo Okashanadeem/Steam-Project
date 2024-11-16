@@ -9,7 +9,7 @@ export const carsData = [
       price: '$25,000',
       color: 'Red',
       manufacturer: 'Toyota',
-      imageUrl: "https://c4.wallpaperflare.com/wallpaper/126/745/144/white-background-toyota-toyota-camry-wallpaper-preview.jpg",
+      imageUrl: 'https://c4.wallpaperflare.com/wallpaper/126/745/144/white-background-toyota-toyota-camry-wallpaper-preview.jpg',
     },
     {
       id: 2,
