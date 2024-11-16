@@ -1,22 +1,28 @@
 // src/components/Navbar.tsx
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import carlogo3 from "../public/carlogo3.png"
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="bg-blue-800 text-white shadow-md"> {/* Royal Blue for primary accent */}
-      <div className="max-w-7xl mx-auto px-4 py-4">
+    <nav className=" text-white shadow-md" style={{backgroundColor: "#1c3e9d"}}> {/* Royal Blue for primary accent */}
+      <div className="max-w-7xl mx-auto px-8 py-4">
         <div className="flex items-center justify-between">
           {/* Logo and Brand Name */}
-          <div className="text-xl font-bold text-yellow-400"> {/* Golden Yellow for brand text */}
-            <Link href="/" className="hover:text-yellow-300">
-              CarBaazar
+          <div className="px-0 py-0"> {/* Golden Yellow for brand text */}
+            <Link href="/" >
+             <Image
+             src={carlogo3}
+             alt='carlogo'
+             className='w-28 h-10 '
+             />
             </Link>
           </div>
 
           {/* Navigation Links */}
           <div className="hidden md:flex space-x-8">
-            <Link href="/" className="hover:text-blue-300"> {/* Sky Blue for hover effect */}
+            <Link href="/" className="hover:text-yellow-300"> {/* Sky Blue for hover effect */}
               Home
             </Link>
             <Link href="/car-listing" className="hover:text-blue-300">
