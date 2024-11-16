@@ -100,4 +100,3 @@ export const carsData = [
       imageUrl: 'https://www.motortrend.com/uploads/sites/5/2020/08/2019_Golf_R_Ginster_Yellow-8627.jpg',
     },
   ];
-  
