@@ -3,11 +3,23 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
+// Define a TypeScript interface for the car object
+interface Car {
+  id: number;
+  name: string;
+  price: string;
+  color: string;
+  manufacturer: string;
+  imageUrl: string;
+}
+
 const AdminDashboard: React.FC = () => {
   const router = useRouter();
 
-  const [cars, setCars] = useState<any[]>([]); // State to hold the cars data from localStorage
-  const [newCar, setNewCar] = useState({
+  // Update the state to use the Car interface
+  const [cars, setCars] = useState<Car[]>([]); // State to hold the cars data from localStorage
+  const [newCar, setNewCar] = useState<Car>({
+    id: 0,
     name: '',
     price: '',
     color: '',
@@ -39,14 +51,22 @@ const AdminDashboard: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const updatedCars = [...cars, newCar];
+    // Create new car object
+    const carToAdd = {
+      ...newCar,
+      id: Date.now(), // Unique ID for the new car (using timestamp)
+    };
+
+    // Add new car to the cars array
+    const updatedCars = [...cars, carToAdd];
     setCars(updatedCars);
 
-    // Save updated cars data to localStorage
+    // Save updated cars array to localStorage
     localStorage.setItem('cars', JSON.stringify(updatedCars));
 
-    // Reset the form
+    // Reset form
     setNewCar({
+      id: 0,
       name: '',
       price: '',
       color: '',
@@ -58,7 +78,7 @@ const AdminDashboard: React.FC = () => {
   return (
     <div className="flex flex-col md:flex-row min-h-screen bg-gray-50">
       {/* Sidebar */}
-      <div className="w-full md:w-64 mt-4 md:mt-2 bg-white shadow-md hover:shadow-xl transition duration-200 text-[#ffb03b] p-6 flex flex-col justify-start mb-6 md:mb-0 rounded-lg">
+      <div className="w-full md:w-64 bg-white shadow-md hover:shadow-lg transition duration-200 text-[#ffb03b] p-6 flex flex-col justify-between mb-6 md:mb-0">
         <h2 className="text-2xl text-black font-bold text-center mb-8">Admin Panel</h2>
         <ul className="flex flex-col space-y-4">
           <li>
@@ -86,7 +106,9 @@ const AdminDashboard: React.FC = () => {
 
       {/* Main Content */}
       <div className="flex-1 p-6">
-        <h1 className="text-3xl font-semibold text-center text-blue-600 mb-6">Welcome to the Admin Panel</h1>
+        <h1 className="text-3xl font-semibold text-blue-600 mb-6">Welcome to the Admin Panel</h1>
+        <p className="text-lg text-gray-600 mb-8">This is the admin dashboard. Only accessible after login.</p>
+
         {/* Sell Your Car Form */}
         <h2 className="text-2xl font-semibold text-blue-600 mb-4">Sell Your Car</h2>
         <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-md mb-6">
@@ -179,6 +201,3 @@ const AdminDashboard: React.FC = () => {
 };
 
 export default AdminDashboard;
-
-
-
