@@ -1,20 +1,22 @@
-'use client'
+'use client';
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useAuth } from '../context/AuthProvider';
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const { setIsLoggedIn } = useAuth();
   const router = useRouter();
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Mock login validation (you can replace it with actual logic)
     if (email === 'okashanadeem0101@gmail.com' && password === '123456789') {
-      // If login is successful, redirect to the dashboard
+      localStorage.setItem('isLoggedIn', 'true');
+      setIsLoggedIn(true);
       router.push('/admin-dashboard');
     } else {
       setError('Invalid email or password');
