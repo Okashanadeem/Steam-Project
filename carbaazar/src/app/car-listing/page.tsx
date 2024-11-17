@@ -1,7 +1,6 @@
 // src/car-listing.tsx
 
 import React from 'react';
-import Image from 'next/image';
 import { carsData } from '../data/carsData'; // Importing the car data
 
 const CarListing: React.FC = () => {

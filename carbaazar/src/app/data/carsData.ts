@@ -1,6 +1,3 @@
-import Image from "next/image";
-import toyotacamry from "../public/toyotacamry.jpg";
-import { imageConfigDefault } from "next/dist/shared/lib/image-config";
 // src/data/carsData.ts
 export const carsData = [
     {
