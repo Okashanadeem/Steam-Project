@@ -1,7 +1,7 @@
 // src/car-listing.tsx
 
 import React from 'react';
-import { carsData } from '../../../../../../Steam-Project/carbaazar/src/app/data/carsData'; // Importing the car data
+import { carsData } from '../data/carsData'; // Importing the car data
 
 const CarListing: React.FC = () => {
   return (
