@@ -24,7 +24,7 @@ const Home: React.FC = () => {
             Explore The Next <span className='hover:text-black transition duration-300'>Generation</span> Of Cars
           </h1>
           <p className="md:text-sm text-xs md:mt-6 mt-3">
-            Discover cutting-edge innovation and exceptional performance with the latest models crafted for tomorrow’s roadways.
+            Discover cutting-edge innovation and exceptional performance with the latest models crafted for tomorrow roadways.
           </p>
           <div className="flex md:mb-20 md:mt-4 mt-3">
             <div className="flex md:w-40 w-32 bg-black md:h-12 h-8 rounded-3xl items-center hover:bg-gray-900 transition duration-300">
