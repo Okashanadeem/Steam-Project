@@ -1,4 +1,3 @@
-// src/data/carsData.ts
 export const carsData = [
     {
       id: 1,
@@ -6,7 +5,7 @@ export const carsData = [
       price: '$25,000',
       color: 'Red',
       manufacturer: 'Toyota',
-      imageUrl: 'https://c4.wallpaperflare.com/wallpaper/126/745/144/white-background-toyota-toyota-camry-wallpaper-preview.jpg',
+      imageUrl: "https://c4.wallpaperflare.com/wallpaper/126/745/144/white-background-toyota-toyota-camry-wallpaper-preview.jpg",
     },
     {
       id: 2,
@@ -38,7 +37,7 @@ export const carsData = [
       price: '$45,000',
       color: 'Silver',
       manufacturer: 'Mercedes-Benz',
-      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAJjZb8Be8giajt6rxoLXfoufHlMxGScyyoA&s',
+      imageUrl: 'https://www.shutterstock.com/image-illustration/almaty-kazakhstan-march-25-2020-600nw-1712942737.jpg',
     },
     {
       id: 6,
@@ -86,7 +85,7 @@ export const carsData = [
       price: '$28,000',
       color: 'Grey',
       manufacturer: 'Mazda',
-      imageUrl: 'https://carsales.pxcrush.net/car/spec/S0004ZZ7.jpg?pxc_method=GravityFill&width=480&height=320&watermark=1648356304',
+      imageUrl: 'https://images.edealer.ca/18/147047638.jpeg',
     },
     {
       id: 12,
@@ -97,3 +96,4 @@ export const carsData = [
       imageUrl: 'https://www.motortrend.com/uploads/sites/5/2020/08/2019_Golf_R_Ginster_Yellow-8627.jpg',
     },
   ];
+  

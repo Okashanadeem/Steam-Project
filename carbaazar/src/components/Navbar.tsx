@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '../app/context/AuthProvider';
+import Image from 'next/image';
+import carlogo3 from "../public/carlogo3.png"
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // State to toggle mobile menu
@@ -24,11 +26,13 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex-shrink-0 font-[Poppins]">
-            <Link href="/">
-              <span className="text-2xl font-bold text-white hover:text-yellow-300 transition duration-200">
-                Ride Walay
-              </span>
+          <div className="px-0 py-0"> {/* Golden Yellow for brand text */}
+            <Link href="/" >
+             <Image
+             src={carlogo3}
+             alt='carlogo'
+             className='w-28 h-10 '
+             />
             </Link>
           </div>
 
