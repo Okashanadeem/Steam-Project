@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import carlogo3 from "../public/carlogo3.png";
 import { useRouter } from 'next/navigation';
 import { useAuth } from '../app/context/AuthProvider';
 
@@ -19,19 +18,17 @@ const Navbar: React.FC = () => {
 
   return (
     <nav
-      className="text-white shadow-md sticky top-0 z-50 lg:backdrop-blur-lg" // Added sticky and z-50
+      className="text-white shadow-md relative lg:backdrop-blur-md" // Added lg:backdrop-blur-md
       style={{ backgroundColor: '#1c3e9d' }}
     >
       <div className="max-w-7xl mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex-shrink-0 font-[Poppins] px-0 py-0">
-           <Link href="/" >
-             <Image
-             src={carlogo3}
-             alt='carlogo'
-             className='w-28 h-10 '
-             />
+          <div className="flex-shrink-0 font-[Poppins]">
+            <Link href="/">
+              <span className="text-2xl font-bold text-white hover:text-yellow-300 transition duration-200">
+                Ride Walay
+              </span>
             </Link>
           </div>
 
