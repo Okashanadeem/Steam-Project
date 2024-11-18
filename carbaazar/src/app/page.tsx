@@ -1,3 +1,4 @@
+// src/page.tsx
 import React from 'react';
 import Image from 'next/image';
 import Aboutimage from "../public/Aboutimage.jpg";
@@ -8,9 +9,11 @@ import picture2 from "../public/person2.webp";
 import carhome from "../public/header.png";
 import Link from 'next/link';
 
+
 const Home: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-white">
+
       <header
         className="w-full text-white bg-black md:flex md:pl-10 pl-10 pr-10"
         style={{ backgroundColor: "#1c3e9d" }}
@@ -47,7 +50,7 @@ const Home: React.FC = () => {
         />
       </header>
 
-      <section className='md:py-24 py-12  md:flex  md:ml-28 md:mr-28 ml-8 '>
+      <div className='md:py-24 py-12  md:flex  md:ml-28 md:mr-28 ml-8 '>
         <Image
           src={Aboutimage2}
           alt='mobile about image'
@@ -94,30 +97,24 @@ const Home: React.FC = () => {
                 <h1 className='mt-1 ml-1' style={{ fontSize: 11 }}> Test Drive Convenience</h1>
               </div>
             </div>
+
           </div>
           <div className='flex mt-8'>
             <Link className=' w-32 h-9 rounded-3xl text-blue-600 border-blue-600 border-2 font-semibold  flex justify-center pt-2 hover:bg-blue-600 hover:text-white hover:animate-pulse' style={{ fontSize: 11 }}
               href={"/about"}>About CarBazaar
-              <Image
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4Gm7gfAhbhp2Piir60pmfMYNxMfJnsOxevg&s"
-                alt="callicon"
-                width={32}
-                height={32}
-                className='w-8 h-8 ml-8 rounded-full hover:animate-spin '
-              />
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4Gm7gfAhbhp2Piir60pmfMYNxMfJnsOxevg&s" alt="car icon" className='w-3 h-4 ml-2 hover:mix-blend-color-burn ' />
             </Link>
             <Link className='flex hover:animate-pulse' href="/contactus">
-              <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ90fMqy14E9QB4_M4gdKijq6yscvqRa1uMcw&s" alt="callicon" className='w-8 h-8 ml-8 rounded-full hover:animate-spin '
-                width={32}
-                height={32}
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ90fMqy14E9QB4_M4gdKijq6yscvqRa1uMcw&s" alt="callicon" className='w-8 h-8 ml-8 rounded-full hover:animate-spin '
               />
               <h1 className='mt-1 text-sm ml-1'>+1 234 567 890</h1>
             </Link>
+            <br /><br />
           </div>
         </div>
-      </section>
 
-      <section className='border-b-2 border-t-2 border-slate-100'>
+      </div>
+      <div className='border-b-2 border-t-2 border-slate-100'>
         <div className='md:flex md:ml-48 ml-12 md:mr-48 mr-14 md:mt-16 mt-10 mb-10 md:mb-16'>
           <div className="bg-gray-100 py-12">
             <h2 className="text-center text-blue-600 font-bold text-lg">Why Choose CarBaazar</h2>
@@ -141,12 +138,12 @@ const Home: React.FC = () => {
               <div className="group bg-white shadow-lg rounded-lg p-6 flex flex-col items-center text-center hover:shadow-xl transform hover:-translate-y-2 transition duration-300 ease-in-out">
                 <Image
                   src={Abouticon}
-                  alt="Comprehensive Selection"
+                  alt="Comprehensive Vehicle Selection"
                   className="w-12 h-12 mb-4 group-hover:scale-110 transition duration-300"
                 />
                 <h3 className="font-bold text-lg group-hover:text-blue-600 transition duration-300">Comprehensive Selection</h3>
                 <p className="text-sm mt-2 opacity-80">
-                  Choose from a wide variety of vehicles that cater to different tastes and needs.
+                  Choose from a diverse range of vehicles that meet every need and budget.
                 </p>
               </div>
 
@@ -159,19 +156,60 @@ const Home: React.FC = () => {
                 />
                 <h3 className="font-bold text-lg group-hover:text-blue-600 transition duration-300">Test Drive Convenience</h3>
                 <p className="text-sm mt-2 opacity-80">
-                  Take a test drive at your convenience to ensure you make the right decision.
+                  Schedule test drives effortlessly to ensure you make the right choice.
                 </p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      <footer className="bg-gray-100 py-8 mt-16 text-center">
-        <p className="text-sm">© 2024 CarBaazar. All Rights Reserved.</p>
-      </footer>
+        </div>
+      </div>
+
+      <div className="bg-gray-100 py-16">
+        <div className="text-center">
+          <h1 className="text-blue-600 text-lg font-bold">Testimonials</h1>
+          <h2 className="text-3xl font-bold mt-2">What Our Clients Say</h2>
+          <p className="mt-4 text-sm md:text-base text-gray-600 max-w-2xl mx-auto">
+            Hear from our satisfied customers about their experience with CarBaazar.
+            We take pride in delivering exceptional service and ensuring customer satisfaction.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8 mt-10 px-8 md:px-44">
+          {/* Testimonial 1 */}
+          <div className="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center text-center hover:shadow-xl transform hover:-translate-y-2 transition duration-300 ease-in-out">
+            <Image
+              src={picture1}
+              alt="Client 1"
+              className="w-20 h-20 rounded-full mb-4"
+            />
+            <h3 className="font-bold text-lg">John Doe</h3>
+            <p className="text-sm text-gray-600 mt-2 italic">
+              "CarBaazar made my car buying experience seamless and enjoyable. The team was incredibly helpful and professional!"
+            </p>
+          </div>
+
+          {/* Testimonial 2 */}
+          <div className="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center text-center hover:shadow-xl transform hover:-translate-y-2 transition duration-300 ease-in-out">
+            <Image
+              src={picture2}
+              alt="Client 2"
+              className="w-20 h-20 rounded-full mb-4"
+            />
+            <h3 className="font-bold text-lg">Jane Smith</h3>
+            <p className="text-sm text-gray-600 mt-2 italic">
+              "The diverse range of cars and the test drive convenience made choosing my dream car a breeze. Highly recommend!"
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+
     </div>
+
   );
 };
 
 export default Home;
+
