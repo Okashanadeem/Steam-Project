@@ -19,7 +19,7 @@ const Home: React.FC = () => {
             <span className="hover:text-black transition duration-300">Generation</span> Of Cars
           </h1>
           <p className="md:text-sm text-xs md:mt-6 mt-3">
-            Discover cutting-edge innovation and exceptional performance with the latest models crafted for tomorrow's roadways.
+            Discover cutting-edge innovation and exceptional performance with the latest models crafted for tomorrow&#39;s roadways.
           </p>
           <div className="flex md:mb-20 md:mt-4 mt-3 gap-2 mb-4">
             <div className="flex md:w-40 w-32 bg-black md:h-12 h-8 rounded-3xl items-center hover:bg-gray-900 hover:scale-105 transition-transform">
@@ -35,11 +35,11 @@ const Home: React.FC = () => {
           </div>
         </div>
         <Image
-  src={carhome}
-  alt="Car Home"
-  className="hidden md:block lg:w-1/2 lg:h-auto md:w-1/2 md:h-auto md:ml-20 mb-10 mt-2 md:pr-10 md:mt-32 md:mb-10"
-/>
-</header>
+          src={carhome}
+          alt="Car Home"
+          className="hidden md:block lg:w-1/2 lg:h-auto md:w-1/2 md:h-auto md:ml-20 mb-10 mt-2 md:pr-10 md:mt-32 md:mb-10"
+        />
+      </header>
 
       <div className="md:py-24 py-12 md:flex md:ml-28 md:mr-28 mx-5">
         {/* Left Image */}
@@ -72,7 +72,6 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
-
 
       {/* Why Choose Us Section */}
       <section className="bg-white py-16 w-full">
@@ -115,14 +114,14 @@ const Home: React.FC = () => {
       {/* Testimonial Section */}
       <section className="bg-gray-100 py-16 w-full">
         <h2 className="text-center text-3xl font-bold text-blue-600">Testimonials</h2>
-        <p className="text-center text-sm mt-2 text-gray-600">Here's what our happy customers have to say</p>
+        <p className="text-center text-sm mt-2 text-gray-600">Here&#39;s what our happy customers have to say</p>
         <div className="flex flex-wrap justify-center mt-10 gap-8">
           {[picture1, picture2].map((pic, index) => (
             <div key={index} className="bg-white shadow-lg p-6 rounded-lg w-80 hover:scale-105 transition-transform">
               <Image src={pic} alt={`Customer ${index + 1}`} className="w-20 h-20 rounded-full mx-auto" />
               <h3 className="mt-4 text-center font-bold text-lg">John Doe</h3>
               <p className="text-center text-gray-600 text-sm">
-                "CarBaazar is the best! I found the perfect car and the staff was incredibly helpful."
+                &quot;CarBaazar is the best! I found the perfect car and the staff was incredibly helpful.&quot;
               </p>
             </div>
           ))}

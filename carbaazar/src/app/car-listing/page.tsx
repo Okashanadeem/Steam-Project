@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { carsData } from '../data/carsData'; // Importing the car data
+import Image from 'next/image';
 
 const CarListing: React.FC = () => {
   return (
@@ -11,10 +12,10 @@ const CarListing: React.FC = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {carsData.map((car) => (
           <div key={car.id} className="bg-white p-4 rounded-lg shadow-md">
-            <img
-              src={car.imageUrl}
-              alt={car.name}
-              className="w-full h-40 object-cover rounded-md"
+            <Image
+            src={car.imageUrl}
+            alt={car.name}
+            className="w-full h-40 object-cover rounded-md"
             />
             <h2 className="text-xl font-semibold mt-4">{car.name}</h2>
             <p className="text-gray-700">{car.manufacturer}</p>
