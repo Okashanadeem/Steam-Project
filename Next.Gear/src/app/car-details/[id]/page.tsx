@@ -1,17 +1,19 @@
-import { notFound } from 'next/navigation'; // Handle invalid IDs gracefully
-import { carsData } from '../../data/carsData'; // Adjust the path based on your project structure
+import { notFound } from 'next/navigation';
+import { carsData } from '../../data/carsData';
 import Image from 'next/image';
 
 interface Props {
-  params: { id: string }; // Get the dynamic route parameter
+  params: { id: string };
 }
 
-// Since this is a dynamic route, we use `generateStaticParams` in Next.js 13+ to handle dynamic params at build time
+// This function is used for static generation to get the dynamic routes at build time
 export async function generateStaticParams() {
+  // Generate the static params with IDs as strings
   const cars = carsData.map(car => ({
-    id: car.id.toString(), // Generate params for each car (using ID as a string)
+    id: car.id.toString(),
   }));
 
+  // Return params as an array of objects
   return cars.map(car => ({
     params: car,
   }));
