@@ -2,39 +2,36 @@ import { notFound } from 'next/navigation';
 import { carsData } from '../../data/carsData';
 import Image from 'next/image';
 
-// Define the type for the params in the Props interface
-interface Props {
-  params: { id: string };
+// Define the type for the car details params
+interface CarParams {
+  id: string;
 }
 
-// Static generation function to generate dynamic routes at build time
+// Since we're using static generation, we use `generateStaticParams`
 export async function generateStaticParams() {
-  // Generate static params with IDs as strings
   const cars = carsData.map(car => ({
-    id: car.id.toString(),  // Ensure that the ID is a string for each car
+    id: car.id.toString(), // Ensure the ID is a string
   }));
 
-  // Return the params for each car as an array
+  // Return params as an array of objects
   return cars.map(car => ({
     params: car,
   }));
 }
 
-const CarDetails = ({ params }: Props) => {
+const CarDetails = ({ params }: { params: CarParams }) => {
   const { id } = params;
 
-  // Find the car based on the ID (converted to number)
+  // Find the car based on the ID (converted to a number for matching)
   const car = carsData.find((car) => car.id === parseInt(id));
 
-  // If no car is found, show a 404 error page
   if (!car) {
-    notFound();
+    notFound(); // Show a 404 page if the car is not found
   }
 
   return (
     <div className="min-h-screen bg-gray-100 p-4">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-6">
-        {/* Use next/image for optimized image rendering */}
         <Image
           src={car.imageUrl}
           alt={car.name}
