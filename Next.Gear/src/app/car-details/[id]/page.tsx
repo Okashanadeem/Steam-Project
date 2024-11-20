@@ -19,7 +19,11 @@ export async function generateStaticParams() {
   }));
 }
 
-const CarDetails = ({ params }: { params: CarParams }) => {
+type CarDetailsProps = {
+  params: CarParams;
+};
+
+const CarDetails = ({ params }: CarDetailsProps) => {
   const { id } = params;
 
   // Find the car based on the ID (converted to a number for matching)
