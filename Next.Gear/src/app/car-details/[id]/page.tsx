@@ -3,10 +3,11 @@ import { carsData } from '../../data/carsData'; // Adjust the path based on your
 import Image from 'next/image';
 
 interface Props {
-  params: { id: string }; // Get the dynamic route parameter (ensure it's async)
+  params: { id: string }; // Get the dynamic route parameter
 }
 
-const CarDetails = ({ params }: Props) => {
+// This is the page component for the dynamic route
+const CarDetails = async ({ params }: Props) => {
   const { id } = params;
 
   // Find the car based on the ID
