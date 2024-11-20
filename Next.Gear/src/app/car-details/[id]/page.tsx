@@ -19,6 +19,7 @@ export async function generateStaticParams() {
   }));
 }
 
+// Correct type for the component's props
 type CarDetailsProps = {
   params: CarParams;
 };
