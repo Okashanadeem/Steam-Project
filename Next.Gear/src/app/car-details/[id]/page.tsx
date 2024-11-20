@@ -6,8 +6,18 @@ interface Props {
   params: { id: string }; // Get the dynamic route parameter
 }
 
-// This is the page component for the dynamic route
-const CarDetails = async ({ params }: Props) => {
+// Since this is a dynamic route, we use `generateStaticParams` in Next.js 13+ to handle dynamic params at build time
+export async function generateStaticParams() {
+  const cars = carsData.map(car => ({
+    id: car.id.toString(), // Generate params for each car (using ID as a string)
+  }));
+
+  return cars.map(car => ({
+    params: car,
+  }));
+}
+
+const CarDetails = ({ params }: Props) => {
   const { id } = params;
 
   // Find the car based on the ID
