@@ -19,12 +19,9 @@ export async function generateStaticParams() {
   }));
 }
 
-// Correct type for the component's props
-type CarDetailsProps = {
-  params: CarParams;
-};
-
-const CarDetails = ({ params }: CarDetailsProps) => {
+// Update: We no longer need to define CarDetailsProps explicitly.
+// Next.js will infer the props for dynamic routes.
+const CarDetails = ({ params }: { params: CarParams }) => {
   const { id } = params;
 
   // Find the car based on the ID (converted to a number for matching)
