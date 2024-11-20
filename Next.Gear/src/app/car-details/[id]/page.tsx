@@ -2,6 +2,11 @@ import { notFound } from 'next/navigation';
 import { carsData } from '../../data/carsData';
 import Image from 'next/image';
 
+// Define the type for the params
+interface Props {
+  params: { id: string };
+}
+
 // This function is used for static generation to get the dynamic routes at build time
 export async function generateStaticParams() {
   // Generate the static params with IDs as strings
@@ -15,7 +20,7 @@ export async function generateStaticParams() {
   }));
 }
 
-const CarDetails = ({ params }: any) => {
+const CarDetails = ({ params }: Props) => {
   const { id } = params;
 
   // Find the car based on the ID
