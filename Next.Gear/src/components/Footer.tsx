@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className="border-t border-gray-700 mt-4 pt-2 text-center text-xs text-white">
+      <div className="border-t border-blue-950 mt-4 pt-2 text-center text-xs text-white">
         <p>&copy; {new Date().getFullYear()} Ride Walay. All rights reserved.</p>
         <p>
           Made with ❤️ by Okasha Nadeem & Anas Shafat.{' '}
