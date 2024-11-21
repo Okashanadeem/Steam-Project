@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
               href="mailto:support@ridewalay.com"
               className="hover:text-yellow-300 transition"
             >
-              support@ridewalay.com
+              support@nextgear.com
             </a>
           </p>
           <p>
