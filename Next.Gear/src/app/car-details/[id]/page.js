@@ -2,29 +2,17 @@ import { notFound } from 'next/navigation';
 import { carsData } from '../../data/carsData';
 import Image from 'next/image';
 
-// Define the type for the car details params
-interface CarParams {
-  id: string;
-}
-
-// Since we're using static generation, we use `generateStaticParams`
 export async function generateStaticParams() {
-  const cars = carsData.map(car => ({
+  const cars = carsData.map((car) => ({
     id: car.id.toString(), // Ensure the ID is a string
   }));
 
-  // Return params as an array of objects
-  return cars.map(car => ({
+  return cars.map((car) => ({
     params: car,
   }));
 }
 
-// Correct type for the component's props
-type CarDetailsProps = {
-  params: CarParams; // Expecting params to be passed here directly as static params
-};
-
-const CarDetails = ({ params }: CarDetailsProps) => {
+const CarDetails = ({ params }) => {
   const { id } = params;
 
   // Find the car based on the ID (converted to a number for matching)
