@@ -3,12 +3,12 @@ import Link from 'next/link';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-slate-800 text-white py-4">
+    <footer className="bg-blue-900 text-white py-4">
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
         {/* Branding Section */}
         <div>
           <h2 className="text-lg font-bold font-[Poppins] mb-2">Ride Walay</h2>
-          <p className="text-gray-400">
+          <p className="text-white">
             Explore the best cars for your ride. Your satisfaction, our priority.
           </p>
         </div>
@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
         {/* Contact Information */}
         <div>
           <h3 className="text-md font-semibold mb-2">Contact Us</h3>
-          <p className="text-gray-400">
+          <p className="text-white">
             <span className="font-semibold">Email:</span>{' '}
             <a
               href="mailto:support@ridewalay.com"
@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className="border-t border-gray-700 mt-4 pt-2 text-center text-xs text-gray-500">
+      <div className="border-t border-gray-700 mt-4 pt-2 text-center text-xs text-white">
         <p>&copy; {new Date().getFullYear()} Ride Walay. All rights reserved.</p>
         <p>
           Made with ❤️ by Okasha Nadeem & Anas Shafat.{' '}
